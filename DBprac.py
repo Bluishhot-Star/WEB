@@ -1,5 +1,5 @@
 from pymongo import MongoClient
-client = MongoClient('mongodb+srv://test:kassid@mycluster.aq6co.mongodb.net/myCluster?retryWrites=true&w=majority')
+client = MongoClient('mongodb+srv://test:OO@mycluster.aq6co.mongodb.net/myCluster?retryWrites=true&w=majority') #change OO
 db = client.prac
 
 db.users.delete_one({'name':'bobby'})
