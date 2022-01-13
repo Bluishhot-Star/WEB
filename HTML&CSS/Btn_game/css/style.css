@@ -1,0 +1,118 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+.title {
+    width: 325px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
+}
+.game {
+    width: 325px;
+    height: 380px;
+    padding: 10px;
+    position: relative;
+    border: 2px solid #000;
+    background-color: gray;
+}
+.left {
+    display: inline-block;
+    background-image: url(/images/l_btn.png);
+    background-size: contain;
+    border: 2px solid #000;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 30%;
+    bottom: 10px;
+}
+.right {
+    display: inline-block;
+    background-image: url(/images/r_btn.png);
+    background-size: contain;
+    border: 2px solid #000;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-top: 5px;
+    position: absolute;
+    right: 30%;
+    bottom: 10px;
+}
+.refresh {
+    border: 1px solid #000;
+    width: 15px;
+    height: 15px;
+    position:absolute;
+    border-radius: 5px;
+    z-index: 10;
+    background-image: url(/images/direction.png);
+    background-size: contain;
+}
+
+.right:active ~ .container{
+    background-position: 100%;
+    transition-property: background-position;
+    transition-duration: 2s;
+    transition-delay: 0s;
+}
+.right:active ~ .container>.child{
+    background-color: red;
+}
+.right:active ~ .container>.victory {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 1s ease 2s;
+}
+.left:active ~ .container>.child{
+    background-color: red;
+}
+.left:active ~ .container{
+    background-position: 0%;
+    transition-property: background-position;
+    transition-duration: 2s;
+}   
+.refresh:active ~ .container{
+    background-position: 0%;
+    transition: background-position 0s;
+}
+
+.container {
+    border: 1px solid #000;
+    width: 300px;
+    height: 300px;
+    position: relative;
+    background-image: url("/images/stage.png");
+    background-position: 0px 0px;
+    transition: background-position 10000s linear;
+}
+.child {
+    background-color: #fff;
+    width: 30px;
+    height: 30px;
+    position:absolute;
+    top: 55%;
+    left: 50%;
+    background-image: url(/images/cat.png);
+    background-size: contain;
+    background-position: center;
+    transform: translate(-50%,-50%);
+}
+.victory {
+    visibility: hidden;
+    opacity: 0;
+    border: 1px solid #000;
+    background-color: gold;
+    border-radius: 5px;
+    text-align: center;
+    width: 100px;
+    padding: 2px;
+    height: 30px;
+    font-weight: bold;
+    position:absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
