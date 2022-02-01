@@ -2,19 +2,85 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Kassid's the Firstpage">
+    <title>Kassid Universe</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="description" content="Kassid's First Webpage">
     <meta name="keywords" content="kassid, homepage, web">
     <meta name="author" content="Kassid">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Open Graph (Facebook, Likedin)  -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Kassid Universe">
+    <meta property="og:description" content="Kassid의 첫 번째 웹사이트">
+    <meta property="og:image" content="images/chill.jpg">
+    <meta property="og:url" content="website">
+    <meta property="og:site_name" content="Kassid Universe">
+    
+    <!-- twitter card (Twitter) -->
+    <meta name="twitter:card" content="summary">
+    <!-- card 종류: summary, photo, player -->
+    <meta name="twitter:title" content="Kassid Universe">
+    <meta name="twitter:description" content="Kassid의 첫 번째 웹사이트">
+    <meta name="twitter:image" content="images/chill.jpg">
+    <meta property="twitter:url" content="website">
+    <meta property="twitter:creator" content="Kassid">
+
+    <!-- 일반적인 favicon 설정 -->
+    <link rel="icon" href="images/favicon.ico">
+    <!-- 아이폰용 favicon 설정 -->
+    <link rel="apple-touch-icon" href="images/favicon.ico">
+    <!-- 인터넷 익스플러용 favicon 설정 -->
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+
+    <!-- CSS RESET -->
+    <link rel="stylesheet" href="css/nomalize.css" />
+    
+    <!-- fontawesome -->
+    <script src="https://kit.fontawesome.com/413c7f2129.js" crossorigin="anonymous"></script>
+
+    <!-- CSS link-->
     <link rel="stylesheet" href="css/style.css">
-    <title>Document</title>
+    
 </head>
 <body>
-    <div class="container">
-        <div class="box">box1</div>
-        <div class="box">box2</div>
-        <div class="box">box3</div>
+    <!-- CSS 작명 규칙 (BEM: Block Element Modifier)-->
+    <!-- - : 단어와 단어 사이에 하이픈! (ex_ head-container-blue) <------ 이것만 사용해야겠다 그냥ㅎ
+        __ : ~ 의 하위 요소 (ex_ head-container__head-brand)
+        -- : ~ 의 상태를 나타낼 때 (ex_ head-container__head-brand--nolink)
+        대문자 사용 X
+    -->
+    
+    <header>
+        <div class="inner">
+            <div class="head-contaioner">
+                <div class="head-title"> <a href="#">Kassid Universe</a></div>
+                <div class="head-desc"><a href="#">푸르지만 뜨겁게</a></div>
+            </div>
+        </div>
+    </header>
+    <div class="content-wrap">
+        <!-- 메인 이미지 섹션-->
+        <section class="main">
+            <div class="main-container">
+                <div class="inner">
+                    <div class="title-container">
+                        <div class="title">Welcome to Kassid Universe</div>
+                        <div class="message">
+                            Do you know me?<br/>
+                            Bluish-hot Star<br/>
+                            KASSID<br/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
+
+
+
+
+    <footer></footer>
+    
 </body>
 </html>
