@@ -63,7 +63,7 @@ header {
 .hidden{
     overflow: hidden;
 }
-.head-contaioner{
+.head-container{
     width: 100%;
     height: 100%;
     display: flex;
@@ -71,14 +71,14 @@ header {
     align-items: center;
     padding: 1rem;
 }
-.head-contaioner a:hover{
+.head-container a:hover{
     color: rgb(0, 119, 255);
 }
-.head-contaioner .head-title{
+.head-container .head-title{
     font-weight: bold;
     font-size: 1.2rem;
 }
-.head-contaioner .head-desc{
+.head-container .head-desc{
     font-weight: bold;
     font-size: 1.1rem;
 }
@@ -166,14 +166,14 @@ header {
     align-items: center;
     color: #332f2f;
     box-shadow: 5px 5px 15px -1px #332f2f25;
-    transition-property: transform;
+    transition-property: transform; /*container의 height 변화 X*/
     transition-duration: 0.3s;
 }
 .skill:hover .skill-desc{
     margin: 0.5rem 0px;
     opacity: 1;
     height: 10px;
-    transition-property: height, opacity;
+    transition-property: height, opacity; /*height를 0으로 했다가 hover시 수치를 적용하는 방식으로 숨겼다가 보이게 하기*/
     transition-duration: 0.3s;
 }
 .skill:hover{
@@ -201,9 +201,7 @@ header {
     transition-duration: 0.3s, 0s;
     transition-delay: 0s, 0s;
 }
-.python-style{
-    color: royalblue;
-}
+.python-style{color: royalblue;}
 .js-style{color: gold;}
 .drawing-style{color: crimson;}
 .react-style{color:turquoise}
@@ -261,9 +259,10 @@ header {
     transform: translate(0%, -5px);
 }
 .favorite-card img{
-    max-width: 240px;
+    /* max-width: 240px; */
+    width: 100%;
+    height: 160px;
     border-radius: 8px 8px 0 0;
-    /* height: 150px; */
     opacity: 0.9;
 }
 .card-container{
@@ -296,10 +295,11 @@ header {
 .card-title{
     margin-bottom: 10px;
     font-size: 18px;
-    width: 100%; /*설정해주지 않으면 말줄임 속성 X*/
+    width: 220px; /*설정해주지 않으면 말줄임 속성 X*/
+    height: 23px;
     font-weight: bold;
     white-space: nowrap;
-    /* overflow:hidden; */
+    overflow:hidden;
     text-overflow: ellipsis;
 }
 .card-subtitle{
@@ -335,6 +335,52 @@ footer{
     font-size: 0.9rem;
 }
 
+#backtotop {
+    background-color: midnightblue;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    border-radius: 20px;
+    position: fixed; /*원래는 after라면 블록의 다음에 적용이 되야함 하지만*/
+    bottom: 30px;   /* fixed로 문서의 흐름에서 벗어나서 그 다음에 오는 아이콘과 겹쳐지는 것!*/
+    right: 30px;
+    visibility: hidden;
+    opacity : 0;
+    transition-property: background-color, opacity, visibility,;
+    transition-duration: 0.3s, 0.5s, 0.5s;
+    z-index: 9999; /*맨 위로 와야할 때 이렇게 표현하는 것이 국룰(9999도 포함)*/
+    cursor: pointer;
+}
+/*아이콘 적용 방법
+1. ::after (요소 뒤에 content 추가)
+2. content : 유니코드 적용(from 폰트어썸)
+3. font-family : FontAwesome 으로 적용
+*/
+#backtotop::after{
+    content : "\f077";
+    font-family: FontAwesome;
+    font-size: 1.5rem;
+    line-height: 40px;
+    color: white;
+}
+#backtotop.show {
+    opacity: 1;
+    visibility: visible;
+    background-color: midnightblue;
+}
+#backtotop.up {
+    animation-name : up;
+    animation-timing-function: linear;
+    animation-duration: 0.5s;
+}
+@keyframes up {
+    60% {
+        transform: translate(0px,-50px) rotateY(540deg);
+        /* height: 60px; */
+        /* background-color: rgb(0, 119, 255); */
+        background-color: gold;
+    }
+}
 /*반응형*/
 @media only screen and (min-width: 1200px) {
     
@@ -416,5 +462,23 @@ footer{
     }
     .favorite-card img{
         width: 180px;
+        height: 120px;
+    }
+    .card-title {
+        width: 170px;
+        overflow:hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    #backtotop {
+        width: 30px;
+        height: 30px;
+        border-radius: 15px;
+        bottom: 20px;
+        right: 20px;
+    }
+    #backtotop::after{
+        font-size: 1.2rem;
+        line-height: 30px;
     }
 }
