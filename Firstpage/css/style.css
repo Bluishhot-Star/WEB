@@ -225,12 +225,20 @@ header {
 .slide-prev{
     font-size: 1.7rem;
     cursor: pointer;
-    color:midnightblue;
+    color:#191970;
+    transition: transform 0.5s;
+}
+.slide-prev-hover:hover {
+    transform : translateX(-2px)
 }
 .slide-next{
     font-size: 1.7rem;
     cursor: pointer;
-    color:slategray;
+    color:#708090;
+    transition: transform 0.5s;
+}
+.slide-next-hover:hover {
+    transform : translateX(2px)
 }
 .arrow-container{
     display: flex;
@@ -245,7 +253,7 @@ header {
     padding: 0;
 }
 .favorite-card{
-    max-width: 240px; /*100%로 하면 그 비율을 유지하기 위해서 보이는 화면에서 줄어든다.*/
+    max-width: 200px; /*100%로 하면 그 비율을 유지하기 위해서 보이는 화면에서 줄어든다.*/
     box-shadow: 5px 5px 15px -1px #332f2f25;
     border-radius: 8px;
     margin: 0 10px;
@@ -261,7 +269,7 @@ header {
 .favorite-card img{
     /* max-width: 240px; */
     width: 100%;
-    height: 160px;
+    height: 140px;
     border-radius: 8px 8px 0 0;
     opacity: 0.9;
 }
@@ -336,7 +344,7 @@ footer{
 }
 
 #backtotop {
-    background-color: midnightblue;
+    background-color: #191970;
     width: 40px;
     height: 40px;
     text-align: center;
@@ -457,13 +465,13 @@ footer{
         margin-left: 10px;
         overflow: hidden;
     }
-    .favorite-card{
+    /* .favorite-card{
         width: 180px;
     }
     .favorite-card img{
         width: 180px;
         height: 120px;
-    }
+    } */
     .card-title {
         width: 170px;
         overflow:hidden;
